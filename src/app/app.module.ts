@@ -38,6 +38,7 @@ import { environment } from '../environment/environment';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
+    EmojiPickerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -51,7 +52,6 @@ import { environment } from '../environment/environment';
   providers: [
     StatusBar,
     SplashScreen,
-    EmojiPickerModule,
     FirebaseService,
     AuthService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

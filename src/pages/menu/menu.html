@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="main">
+    <ion-title>Emoji Ad Libs - Play</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openNewUserModal()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="goHomePage()">
+        <ion-icon name="home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="list-mini-content">
+  <ion-buttons>
+    <button ion-button icon-only (click)="goNewPage()">
+        New Ad Lib!
+    </button>
+  </ion-buttons>
+  <div class="list-mini">
+    <!-- <ion-list>
+      <ion-item *ngFor="let item of items" (click)="viewDetails(item.payload.doc.id,item.payload.doc.data())">
+        <ion-thumbnail item-start>
+          <img [src]="item.payload.doc.data().image">
+        </ion-thumbnail>
+        <h2>{{item.payload.doc.data().title}}</h2>
+        <button ion-button clear item-end>Details</button>
+      </ion-item>
+    </ion-list> -->
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="main">
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logout()">
+        <ion-icon name="hand"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
