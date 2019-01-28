@@ -8,11 +8,30 @@
 
   <ion-navbar>
     <ion-title>Your Ad Lib</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="goMenuPage()">
+        Menu
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <p>Hey, {{ emojitext1 }} it's me {{ emojitext2 }}!
+    Is that your pet {{ emojitext3 }}? Cool.
+    Anyway, {{ emojitext1 }},
+    I was wondering if you wanted to come with me to go to the {{ emojitext4 }}?
+    When we get there we can play with the {{ emojitext5 }}!
+  </p>
 </ion-content>
+<ion-footer>
+  <ion-toolbar color="main">
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logout()">
+        <ion-icon name="hand"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
