@@ -7,19 +7,62 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>new</ion-title>
+    <ion-title>New Ad Lib</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="goLoginPage()">
+        Login
+      </button>
+      <button ion-button icon-only (click)="goMenuPage()">
+        Menu
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <form class="form" [formGroup]="validations_form">
+    <ion-item>
+      <ion-label floating color="primary">Pick 1 Emoji from the Smileys and People Group</ion-label>
+      <ion-input formControlName="emoji1" class="form-control" [(ngModel)]="emojitext1"></ion-input>
+    </ion-item>
+    <button ion-button clear icon-only (click)="toggled1 = !toggled1" [(emojiPickerIf)]="toggled1" [emojiPickerDirection]="'bottom'"
+          (emojiPickerSelect)="emojiSelection1($event)">😄
+    </button>
 
-  <ion-textarea [(ngModel)]="emojitext"></ion-textarea>
+    <ion-item>
+      <ion-label floating color="primary">Pick Another Emoji from the People Group</ion-label>
+      <ion-input formControlName="emoji2" class="form-control" [(ngModel)]="emojitext2"></ion-input>
+    </ion-item>
+    <button ion-button clear icon-only (click)="toggled2 = !toggled2" [(emojiPickerIf)]="toggled2" [emojiPickerDirection]="'bottom'"
+          (emojiPickerSelect)="emojiSelection2($event)">😄
+    </button>
 
-  <button ion-button clear icon-only (click)="toggled = !toggled" [(emojiPickerIf)]="toggled" [emojiPickerDirection]="'bottom'"
-        (emojiPickerSelect)="handleSelection($event)">
-      🤗
-  </button>
+    <ion-item>
+      <ion-label floating color="primary">Pick 1 Emoji from the Nature Group</ion-label>
+      <ion-input formControlName="emoji3" class="form-control" [(ngModel)]="emojitext3"></ion-input>
+    </ion-item>
+    <button ion-button clear icon-only (click)="toggled3 = !toggled3" [(emojiPickerIf)]="toggled3" [emojiPickerDirection]="'bottom'"
+          (emojiPickerSelect)="emojiSelection3($event)">🌸
+    </button>
 
+    <ion-item>
+      <ion-label floating color="primary">Pick 1 Emoji from the Places Group</ion-label>
+      <ion-input formControlName="emoji4" class="form-control" [(ngModel)]="emojitext4"></ion-input>
+    </ion-item>
+    <button ion-button clear icon-only (click)="toggled4 = !toggled4" [(emojiPickerIf)]="toggled4" [emojiPickerDirection]="'bottom'"
+          (emojiPickerSelect)="emojiSelection4($event)">🚙
+    </button>
+
+    <ion-item>
+      <ion-label floating color="primary">Pick 1 Emoji from the Objects Group</ion-label>
+      <ion-input formControlName="emoji5" class="form-control" [(ngModel)]="emojitext5"></ion-input>
+    </ion-item>
+    <button ion-button clear icon-only (click)="toggled5 = !toggled5" [(emojiPickerIf)]="toggled5" [emojiPickerDirection]="'bottom'"
+          (emojiPickerSelect)="emojiSelection5($event)">🔔
+    </button>
+
+    <button class="form-action-button" ion-button block type="submit" (click)="onSubmit(validations_form.value)">Submit</button>
+  </form>
 </ion-content>

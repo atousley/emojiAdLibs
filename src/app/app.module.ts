@@ -10,6 +10,7 @@ import { MenuPage } from '../pages/menu/menu';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { NewPage } from '../pages/new/new';
+import { AdlibDisplayPage } from '../pages/adlib-display/adlib-display';
 
 import { EmojiPickerModule } from '@ionic-tools/emoji-picker';
 
@@ -29,7 +30,8 @@ import { environment } from '../environment/environment';
     MenuPage,
     LoginPage,
     RegisterPage,
-    NewPage
+    NewPage,
+    AdlibDisplayPage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { environment } from '../environment/environment';
     MenuPage,
     LoginPage,
     RegisterPage,
-    NewPage
+    NewPage,
+    AdlibDisplayPage
   ],
   providers: [
     StatusBar,

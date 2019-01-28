@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { AuthService } from '../services/auth.service';
 import { FirebaseService } from '../services/firebase.service';
-import { LoginPage } from '../login/login';
 
+import { LoginPage } from '../login/login';
 import { HomePage } from '../home/home';
 import { NewPage } from '../new/new';
 
@@ -15,35 +15,22 @@ import { NewPage } from '../new/new';
 
 export class MenuPage {
 
-  items: Array<any>;
-
   constructor(
     private navCtrl: NavController,
-    private modalCtrl: ModalController,
-    private authService: AuthService,
-    private firebaseService: FirebaseService
+    private authService: AuthService
   ) {}
 
   ionViewWillEnter(){
-    this.getData();
+    //this.getData();
   }
 
-  getData(){
-    this.firebaseService.getTasks()
-    .then(tasks => {
-      this.items = tasks;
-    })
-  }
+  //getData(){}
 
   logout(){
     this.authService.doLogout()
     .then(res => {
-      this.navCtrl.push(LoginPage);
+      this.navCtrl.push(HomePage);
     })
-  }
-
-  goHomePage(){
-    this.navCtrl.push(HomePage);
   }
 
   goNewPage(){
